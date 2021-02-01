@@ -11,13 +11,13 @@ module.exports = function (grunt) {
             dist: {
                 files: [
                     {
-                        'wp-content/themes/finderscope/static/css/main.css':
-                            'wp-content/themes/finderscope/static/css/main.scss',
+                        'public/css/main.css':
+                            'public/css/main.scss'
                     },
                     {
                         expand: true,
                         cwd: '',
-                        src: ['wp-content/themes/finderscope/static/css/blocks/**/*.scss'],
+                        src: ['public/css/blocks/**/*.scss'],
                         dest: '.',
                         ext: '.css',
                     },
@@ -26,11 +26,11 @@ module.exports = function (grunt) {
         },
         watch: {
             css: {
-                files: 'wp-content/themes/finderscope/static/css/**/*.scss',
+                files: 'public/css/**/*.scss',
                 tasks: ['sass', 'cssmin'],
             },
             javascripts: {
-                files: ['wp-content/themes/finderscope/static/js/finderscope/**/*.js'],
+                files: ['public/js/finderscope/**/*.js'],
                 tasks: ['newer:uglify:my_target'],
                 options: {
                     options: {
@@ -45,14 +45,14 @@ module.exports = function (grunt) {
                 options: {
                     mangle: false,
                     sourceMap: true,
-                    sourceMapName: 'wp-content/themes/finderscope/static/js/finderscope/sourcemap.map',
+                    sourceMapName: 'public/js/finderscope/sourcemap.map',
                 },
                 files: [
                     {
                         expand: true,
-                        cwd: 'wp-content/themes/finderscope/static/js/finderscope/',
+                        cwd: 'public/js/finderscope/',
                         src: ['**/*.js', '!*.min.js'],
-                        dest: 'wp-content/themes/finderscope/static/js/finderscope/',
+                        dest: 'public/js/finderscope/',
                         ext: '.min.js',
                     },
                 ],
@@ -63,9 +63,9 @@ module.exports = function (grunt) {
                 files: [
                     {
                         expand: true,
-                        cwd: 'wp-content/themes/finderscope/static/css',
+                        cwd: 'public/css',
                         src: ['main.css', 'main.css'],
-                        dest: 'wp-content/themes/finderscope/static/css',
+                        dest: 'public/css',
                         ext: '.css',
                     },
                 ],
