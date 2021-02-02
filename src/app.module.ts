@@ -1,11 +1,13 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
+import { HandlebarsAdapter } from '@nestjs-modules/mailer/dist/adapters/handlebars.adapter';
 
 import { RouterModule, Routes } from 'nest-router';
 
 
 /* Modules */
 import { HomeModule } from './home/home.module';
+import { MailerModule } from './mailer/mailer.module';
 
 const routes: Routes = [
     {
@@ -22,7 +24,8 @@ const routes: Routes = [
             envFilePath: '.env',
         }),
         RouterModule.forRoutes(routes),
-        HomeModule
+        MailerModule,
+        HomeModule,
     ],
     controllers: [],
     providers: [],

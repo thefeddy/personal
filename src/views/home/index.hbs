@@ -4,21 +4,94 @@ class="gray-bg"
 {{#extend "body"}}
 <main>
     <header>
-        <div class="name">
-            <h1>David<br> Friedrich</h1>
-            <h2>Javascript Developer</h2>
-        </div>
-        <div class="information">
-            <ul>
-                <li>
-                    <i class="fal fa-envelope"></i><span><a
-                            href="mailto:thefeddy@gmail.com">thefeddy@gmail.com</a></span>
-                </li>
-                <li>
-                    <i class="fal fa-location-circle"></i><span>Orlando, FL</span>
-                </li>
-            </ul>
+        <div class="container">
+            <div class="row">
+                <div class="col-4 name">
+                    <h1>David<br> Friedrich</h1>
+                    <h2>Front-end Developer</h2>
+                </div>
+                <div class="col-8 information">
+                    <ul>
+                        <li>
+                            <i class="fal fa-envelope"></i><span><a
+                                    href="mailto:thefeddy@gmail.com">thefeddy@gmail.com</a></span>
+                        </li>
+                        <li>
+                            <i class="fal fa-location-circle"></i><span>Orlando, FL</span>
+                        </li>
+                        <li>
+                            <i class="fab fa-instagram"></i><span><a
+                                    href="https://www.instagram.com/fe.dd.y/">Fe.dd.y</a></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </header>
+    <section id="social">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h2>Contact</h2>
+                </div>
+                <div class="col-md-8">
+                    <i class="fal fa-envelope"></i>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="field">
+                                    <label>Name</label>
+                                    <input type="text" required>
+                                </div>
+                                <div class="field">
+                                    <label>Email</label>
+                                    <input type="email" required>
+                                </div>
+                                <div class="field">
+                                    <label>Phone</label>
+                                    <input type="text" required>
+                                </div>
+                            </div>
+                            <div class="col-md-8 message">
+                                <div class="field">
+                                    <label>Message</label>
+                                    <textarea required></textarea>
+                                </div>
+                                <button type="submit">Send</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 </main>
+<script>
+    const home = {
+        init: () => {
+            console.log('Initing : : : ');
+            home.onValidInput();
+
+        },
+        onValidInput: () => {
+            for (const input of document.querySelectorAll('input, textarea')) {
+                input.addEventListener('focus', () => {
+                    event.currentTarget.classList.add('is-dirty');
+                });
+                input.addEventListener('blur', () => {
+                    if (event.currentTarget.value != '') {
+                        event.currentTarget.parentNode.classList.add('is-filled-out');
+                    } else {
+                        event.currentTarget.parentNode.classList.remove('is-filled-out');
+                    }
+                });
+            }
+        }
+    }
+    home.init();
+</script>
 {{/extend}}

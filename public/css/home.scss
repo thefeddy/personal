@@ -1,0 +1,118 @@
+#social {
+    form {
+        .field {
+            position: relative;
+
+            display: flex;
+            flex-direction: column;
+
+            margin-bottom: 25px;
+            &:focus-within {
+                label {
+                    font-size: 12px;
+
+                    top: 12px;
+                }
+            }
+            &.is-filled-out {
+                label {
+                    font-size: 12px;
+
+                    top: 12px;
+                }
+            }
+            label {
+                font-family: 'Raleway', sans-serif;
+                font-weight: 500;
+
+                position: absolute;
+                top: 50%;
+                left: 15px;
+
+                transition: all 550ms ease-in-out;
+                transform: translateY(-50%);
+                text-transform: uppercase;
+            }
+            input,
+            textarea {
+                font-family: 'Raleway', sans-serif;
+                font-size: 14px;
+                font-weight: 400;
+
+                height: 60px;
+                padding-left: 15px;
+
+                border: 1px solid #ceced0;
+                outline: none;
+                background: transparent;
+                &:valid {
+                    border-color: #55df75;
+                }
+                &.is-dirty {
+                    &:invalid {
+                        border-color: #df5555;
+                    }
+                }
+            }
+            textarea {
+                height: 200px;
+                padding-top: 25px;
+            }
+        }
+        .message {
+            padding-left: 50px;
+
+            border-left: 2px solid #272727;
+            button {
+                font-family: 'Raleway', sans-serif;
+                font-size: 14px;
+                font-weight: 400;
+
+                position: relative;
+
+                display: block;
+                overflow: hidden;
+
+                width: 200px;
+                height: 40px;
+                margin-left: auto;
+
+                cursor: pointer;
+                transition: all 550ms ease-in-out;
+                text-transform: uppercase;
+
+                color: #636363;
+                border: 1px solid #ceced0;
+                background: transparent;
+                &:hover {
+                    color: #fff;
+                    &::before {
+                        width: 111%;
+                        height: 111%;
+
+                        transform: translate(-50%, -50%) scale(1);
+
+                        background: #e06b57;
+                    }
+                }
+                &::before {
+                    position: absolute;
+                    z-index: -1;
+                    top: 50%;
+                    right: 0;
+                    bottom: 0;
+                    left: 50%;
+
+                    width: 0;
+                    height: 0;
+
+                    content: '';
+                    transition: all 550ms ease-in-out;
+                    transform: translate(-50%, -50%) scale(0);
+
+                    background: transparent;
+                }
+            }
+        }
+    }
+}
