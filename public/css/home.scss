@@ -1,4 +1,50 @@
 #social {
+    h1 {
+        font-family: 'Raleway', sans-serif;
+        font-size: 30px;
+        font-weight: 500;
+
+        position: relative;
+
+        margin: 0 0 50px 0;
+
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        &::after {
+            position: absolute;
+            bottom: -5px;
+            left: 25px;
+
+            width: 50px;
+            height: 2px;
+
+            content: '';
+
+            background: #e06b57;
+        }
+    }
+    i {
+        font-size: 50px;
+
+        position: relative;
+        left: -36px;
+        &::after {
+            position: absolute;
+            top: 83px;
+            left: 50%;
+
+            width: 8px;
+            height: 8px;
+
+            content: '';
+            transform: translateX(-50%);
+
+            border: 2px solid #272727;
+            border-radius: 50%;
+            background-color: #e5e3e6;
+            box-shadow: 0 0 0 1px #e5e3e6;
+        }
+    }
     form {
         .field {
             position: relative;
@@ -58,6 +104,9 @@
                 height: 200px;
                 padding-top: 25px;
             }
+        }
+        .info {
+            padding-right: 30px;
         }
         .message {
             padding-left: 50px;
